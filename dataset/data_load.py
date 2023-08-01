@@ -11,6 +11,7 @@ preprocess = transforms.Compose([
 
 def cu_lane_loader(path):
     img_pil = Image.open(path)
+    # 调整大小
     img_pil = img_pil.resize((224, 224))
     img_tensor = preprocess(img_pil)
     return img_tensor
@@ -31,7 +32,8 @@ class TrainDataset(Dataset):
         # 行锚点：一行有anchor_row个
         # 车道线类型： 共 5 种，ll lr rl rr nil
         # 对于一个图像来说，它有 h * anchor_row * num_cls
-        # 测试一下
+
+        # 返回 图像、行锚点target、列锚点target
         return None, None
 
     def __len__(self):
