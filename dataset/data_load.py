@@ -31,6 +31,7 @@ class TrainDataset(Dataset):
         # 行锚点：一行有anchor_row个
         # 车道线类型： 共 5 种，ll lr rl rr nil
         # 对于一个图像来说，它有 h * anchor_row * num_cls
+        # 测试一下
         return None, None
 
     def __len__(self):
